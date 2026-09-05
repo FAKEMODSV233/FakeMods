@@ -20,6 +20,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            background-image: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.15), transparent 70%);
         }
 
         .container {
@@ -28,14 +29,31 @@
             text-align: center;
         }
 
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
         .profile-img {
             width: 110px;
             height: 110px;
             border-radius: 50%;
             border: 3px solid #a855f7;
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-            margin-bottom: 15px;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
             object-fit: cover;
+        }
+
+        .status-dot {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 18px;
+            height: 18px;
+            background-color: #22c55e;
+            border: 3px solid #0d0e12;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
         }
 
         h1 {
@@ -47,8 +65,10 @@
         }
 
         .badge {
-            display: inline-block;
-            background: rgba(168, 85, 247, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(168, 85, 247, 0.15);
             color: #c084fc;
             border: 1px solid rgba(168, 85, 247, 0.4);
             padding: 5px 14px;
@@ -69,32 +89,61 @@
         }
 
         .card {
-            background: rgba(22, 24, 33, 0.8);
+            background: rgba(22, 24, 33, 0.75);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
             padding: 18px;
             margin-bottom: 16px;
             text-align: left;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.25px ease;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #a855f7, #3b82f6);
+            opacity: 0.8;
         }
 
         .card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             border-color: rgba(168, 85, 247, 0.5);
-            box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.3);
+            box-shadow: 0 12px 30px -5px rgba(168, 85, 247, 0.35);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
         }
 
         .card-date {
             font-size: 11px;
             color: #c084fc;
             font-weight: 600;
-            margin-bottom: 6px;
-            display: block;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .tag-new {
+            background: #ef4444;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
         }
 
         .card h3 {
@@ -122,10 +171,17 @@
             text-align: center;
             margin-top: 10px;
             user-select: all;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
 
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             width: 100%;
             padding: 12px 16px;
             border-radius: 20px;
@@ -157,25 +213,23 @@
         }
 
         .btn-mediafire {
-            background: #a855f7;
+            background: linear-gradient(135deg, #a855f7, #7e22ce);
             color: #ffffff;
             box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3);
         }
 
         .btn-mediafire:hover {
-            background: #9333ea;
-            box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 6px 18px rgba(168, 85, 247, 0.5);
         }
 
         .btn-key {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: #ffffff;
             box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
         }
 
         .btn-key:hover {
-            background: #2563eb;
-            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.5);
         }
 
         .btn-whatsapp {
@@ -183,6 +237,7 @@
             color: #c084fc;
             border: 1px solid rgba(168, 85, 247, 0.4);
             border-radius: 22px;
+            margin-top: 15px;
         }
 
         .btn-whatsapp:hover {
@@ -201,22 +256,49 @@
 <body>
 
     <div class="container">
-        <!-- Logo / Perfil -->
-        <img src="Screenshot_20260825_173640_WhatsApp.jpg" alt="Fake Mods Logo" class="profile-img">
+        <!-- Logo / Perfil con Estado -->
+        <div class="profile-container">
+            <img src="Screenshot_20260825_173640_WhatsApp.jpg" alt="Fake Mods Logo" class="profile-img">
+            <div class="status-dot"></div>
+        </div>
         
         <h1>FAKE MODS</h1>
-        <span class="badge">OFFICIAL COMMUNITY</span>
+        <span class="badge">⚡ OFFICIAL COMMUNITY</span>
         
-        <p class="desc">⚡ DESCARGA LO MÁS NUEVO Y RECIENTE AQUÍ ⚡<br>Archivos y optimizaciones actualizados. Lo más nuevo arriba de todo🎯🔥</p>
+        <p class="desc">🔥 DESCARGA LO MÁS NUEVO Y RECIENTE AQUÍ 🔥<br>Límite activo: 15 archivos top en lista. ¡Lo más nuevo arriba!</p>
 
         <!-- Botón Canal de WhatsApp General -->
         <a href="https://whatsapp.com/channel/0029Vb8MejvKLaHfkVTKNL2L" target="_blank" class="btn btn-main">
             🚀 UNIRSE AL CANAL DE WHATSAPP
         </a>
 
-        <!-- TARJETA 1 (NUEVA: PROXY BIN X FFH4X) -->
+        <!-- TARJETA 1 (NUEVA: HOLOGRAMA VIP & FF MAX BYPASS) -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 05/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 05/09/2026</span>
+                <span class="tag-new">NUEVO</span>
+            </div>
+            <h3>✨ HOLOGRAMA VIP + FF MAX BYPASS 🥷</h3>
+            <p>✅ Holograma personajes y armas (Cuerpo completo)<br>✅ Free Fire MAX Bypass incluidos<br>✅ Wallhack (Pared Prime) - Solucionado Error 400</p>
+            
+            <a href="https://www.mediafire.com/file/8z3l3pflmnvppxs/ERROR_400_SOLUCIONADO%25E2%259C%2585_HOLOGRAMA_VIP_ARMAS_Y_CUERPO_COMPLETO_%252B_WALLHACK_GLOO_FF_MAX_%25F0%259F%2592%259B%25F0%259F%2592%259C.zip/file?dkey=m1ppruya1zf&r=1257" target="_blank" class="btn btn-mediafire">
+                📥 Descargar Holograma VIP (.zip)
+            </a>
+
+            <a href="https://www.mediafire.com/file/ejau9ltge8794so/FF_MAX_BYPASS_KRISSGAMERVIP_%25F0%259F%2590%2589.zip/file" target="_blank" class="btn btn-mediafire">
+                🔥 Descargar Free Fire MAX Bypass (.zip)
+            </a>
+            
+            <div class="key-box">
+                🔑 CONTRASEÑA: FULLREINICIO
+            </div>
+        </div>
+
+        <!-- TARJETA 2 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 05/09/2026</span>
+            </div>
             <h3>💬 PROXY BIN X FFH4X 🥷</h3>
             <p>• Holograma<br>• Aimbot<br>• Chams<br>• Antiban</p>
             
@@ -229,9 +311,11 @@
             </div>
         </div>
 
-        <!-- TARJETA 2 -->
+        <!-- TARJETA 3 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 04/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 04/09/2026</span>
+            </div>
             <h3>💬 SX2 TEAM RAGE XYZ ☑️</h3>
             <p>Descarga la APK de SX2 Team Rage XYZ, Free Fire MAX e ingresa al generador para obtener tu Key gratuita.</p>
             
@@ -248,9 +332,11 @@
             </a>
         </div>
 
-        <!-- TARJETA 3 -->
+        <!-- TARJETA 4 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 03/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 03/09/2026</span>
+            </div>
             <h3>📍 PROXY MTH TEAM V22.0 🔥</h3>
             <p>Descarga Proxy Mth Team V22 y Free Fire oficial de Play Store.</p>
             
@@ -267,9 +353,11 @@
             </a>
         </div>
 
-        <!-- TARJETA 4 -->
+        <!-- TARJETA 5 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 03/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 03/09/2026</span>
+            </div>
             <h3>🥶 PROXY SX2 TEAM PRO V2 💀</h3>
             <p>By AndresXNahu | Descarga Proxy, Free Fire Recomendado y Shizuku 13.7.0</p>
             
@@ -290,9 +378,11 @@
             </a>
         </div>
 
-        <!-- TARJETA 5 -->
+        <!-- TARJETA 6 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 02/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 02/09/2026</span>
+            </div>
             <h3>📍 MTH TEAM PROXY V21.0 100% SAFE 🛡️</h3>
             <p>💯 Anti-Ban | 💯 Anti-Blacklist | 🔔 Compatible con Free Fire PlayStore</p>
             
@@ -305,9 +395,11 @@
             </a>
         </div>
 
-        <!-- TARJETA 6 -->
+        <!-- TARJETA 7 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 02/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 02/09/2026</span>
+            </div>
             <h3>🔥 BALA MOD XYZ CRACK 🔥</h3>
             <p>🛡️ 100% Anti-Ban | ⚡ New Bypass OB54 Update | 🚀 Última Actualización</p>
             
@@ -320,9 +412,11 @@
             </a>
         </div>
 
-        <!-- TARJETA 7 -->
+        <!-- TARJETA 8 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 01/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 01/09/2026</span>
+            </div>
             <h3>🔥 THE KING CHEATS V283 🔥</h3>
             <p>🎯 Aim Assist / Aim Scope | 👁️ Chams Color | 🛡️ Anti-Ban 100% | 🚫 Anti Blacklist | ⚡ Todas las Regiones</p>
             
@@ -335,9 +429,11 @@
             </a>
         </div>
 
-        <!-- TARJETA 8 -->
+        <!-- TARJETA 9 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 01/09/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 01/09/2026</span>
+            </div>
             <h3>🔥 FFH4X PROXY V1 🔥</h3>
             <p>🎯 Aimbot Holograma | 🛡️ Anti-Ban | 🚫 Anti Blacklist | ⚡ Conexión Directa | 🚀 Máxima Optimización</p>
             
@@ -350,9 +446,11 @@
             </div>
         </div>
 
-        <!-- TARJETA 9 -->
+        <!-- TARJETA 10 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            </div>
             <h3>💛 NUEVO PROXY VALI MODS ACTUALIZADO !! 🩸</h3>
             <p>DESCARGA ESTE ARCHIVO MUY BUENO✨️🗿</p>
             
@@ -365,9 +463,11 @@
             </a>
         </div>
 
-        <!-- TARJETA 10 -->
+        <!-- TARJETA 11 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            </div>
             <h3>💬 FAKE LAG V2 ACTUALIZADO PRINCIPAL ONLINE 🤩</h3>
             <p>Descarga la última versión de Fake Lag V2 directamente por Mediafire.</p>
             
@@ -380,9 +480,11 @@
             </div>
         </div>
 
-        <!-- TARJETA 11 -->
+        <!-- TARJETA 12 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            </div>
             <h3>💬 MAD-MAX MODS APK 💥</h3>
             <p>Panel para optimización y funciones avanzadas.<br><small style="color: #f43f5e;">⚠️ Se recomienda probar primero en cuenta secundaria/bot por seguridad.</small></p>
             
@@ -395,9 +497,11 @@
             </div>
         </div>
 
-        <!-- TARJETA 12 -->
+        <!-- TARJETA 13 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            </div>
             <h3>💬 PANEL AIMKILL IOS ACTUALIZADO 🐼</h3>
             <p>🔩 Function Hack: ALL FIX | AIM SILENT | AUTO FIRE | MASS KILL | LOCATION ESP | UNDER KILL | COVER KILL | SPEED TIME</p>
             
@@ -410,9 +514,11 @@
             </div>
         </div>
 
-        <!-- TARJETA 13 -->
+        <!-- TARJETA 14 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 31/08/2026</span>
+            </div>
             <h3>💬 PANEL HUNTER ANKIT V5000 ACTUALIZADO 🤩</h3>
             <p>DESCARGA ESTE ARCHIVO MUY BUENO✨️🗿</p>
             
@@ -425,59 +531,16 @@
             </a>
         </div>
 
-        <!-- TARJETA 14 -->
+        <!-- TARJETA 15 -->
         <div class="card">
-            <span class="card-date">📅 SUBIDO: 30/08/2026</span>
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 30/08/2026</span>
+            </div>
             <h3>🎯 AIMBOT CUELLO MIUI ACTUALIZADO ✅</h3>
             <p>DESCARGA ESTE ARCHIVO MUY BUENO✨️🗿</p>
             
             <a href="https://www.mediafire.com/file/w0cotbyt53xqm6x/AIMBOT_%25F0%259F%2593%2582_CUELLO_MIUI_ACTUALIZADO_%25E2%259C%2585.zip/file?dkey=mfb0x83zp5f&r=1126" target="_blank" class="btn btn-mediafire">
                 📥 Descargar por Mediafire (.zip)
-            </a>
-            
-            <a href="https://whatsapp.com/channel/0029VbDCYlh3mFY6j5zmUR3Q" target="_blank" class="btn btn-key">
-                🔑 Conseguir Contraseña / Key
-            </a>
-        </div>
-
-        <!-- TARJETA 15 -->
-        <div class="card">
-            <span class="card-date">📅 SUBIDO: 30/08/2026</span>
-            <h3>💬 FOX ONE V4 🗯</h3>
-            <p>DESCARGA ESTE ARCHIVO MUY BUENO✨️🗿</p>
-            
-            <a href="https://www.mediafire.com/file/j66u3qmfuaqdmia/Fox%20One%20v4.apk/file?dkey=ccnvbkpb13q&r=567" target="_blank" class="btn btn-mediafire">
-                📥 Descargar Fox One v4 (Mediafire)
-            </a>
-            
-            <a href="https://whatsapp.com/channel/0029VbDCYlh3mFY6j5zmUR3Q" target="_blank" class="btn btn-key">
-                🔑 Conseguir Contraseña / Key
-            </a>
-        </div>
-
-        <!-- TARJETA 16 -->
-        <div class="card">
-            <span class="card-date">📅 SUBIDO: 30/08/2026</span>
-            <h3>⚡ NEW HOLOGRAMA PARA FF MAX & FF NORMAL 🔥⚡</h3>
-            <p>Holograma Amarillo Bordes 💛💜 compatible con Free Fire Normal y FF MAX.<br>DESCARGA ESTE ARCHIVO MUY BUENO✨️🗿</p>
-            
-            <a href="https://www.mediafire.com/file/9zcq6lzfb26dkch/HOLOGRAMA+AMARILLO+BORDES+💛💜.7z/file" target="_blank" class="btn btn-mediafire">
-                📥 Descargar por Mediafire (.7z)
-            </a>
-            
-            <a href="https://whatsapp.com/channel/0029VbDCYlh3mFY6j5zmUR3Q" target="_blank" class="btn btn-key">
-                🔑 Conseguir Contraseña / Key
-            </a>
-        </div>
-
-        <!-- TARJETA 17 -->
-        <div class="card">
-            <span class="card-date">📅 SUBIDO: 30/08/2026</span>
-            <h3>🌐 NETWORK AIM GLOBAL 🗯</h3>
-            <p>DESCARGA ESTE ARCHIVO MUY BUENO✨️🗿<br><small style="color: #c084fc;">🌍 FULL TODAS LAS REGIONES</small></p>
-            
-            <a href="https://www.mediafire.com/file/6xoapcxk9k2dmh0/Network+Aim+GLOBAL.apk/file" target="_blank" class="btn btn-mediafire">
-                📥 Descargar por Mediafire
             </a>
             
             <a href="https://whatsapp.com/channel/0029VbDCYlh3mFY6j5zmUR3Q" target="_blank" class="btn btn-key">
