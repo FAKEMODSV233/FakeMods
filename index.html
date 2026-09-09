@@ -9,33 +9,34 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0d0e12;
+            background-color: #0a0b0e;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 20px 14px;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.2), transparent 70%),
-                radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.1), transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.25), transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15), transparent 50%);
             background-attachment: fixed;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 520px;
             width: 100%;
             text-align: center;
         }
 
+        /* Perfil con animación de resplandor */
         .profile-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .profile-img {
@@ -43,35 +44,43 @@
             height: 110px;
             border-radius: 50%;
             border: 3px solid #a855f7;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+            box-shadow: 0 0 35px rgba(168, 85, 247, 0.7);
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         .status-dot {
             position: absolute;
-            bottom: 5px;
-            right: 5px;
+            bottom: 6px;
+            right: 6px;
             width: 18px;
             height: 18px;
             background-color: #22c55e;
-            border: 3px solid #0d0e12;
+            border: 3px solid #0a0b0e;
             border-radius: 50%;
             box-shadow: 0 0 12px #22c55e;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8); }
             70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
             100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 28px;
             color: #ffffff;
             letter-spacing: -0.5px;
-            font-weight: 700;
-            text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
         }
 
         .badge {
@@ -79,45 +88,45 @@
             align-items: center;
             gap: 6px;
             background: rgba(168, 85, 247, 0.15);
-            color: #c084fc;
+            color: #d8b4fe;
             border: 1px solid rgba(168, 85, 247, 0.4);
             padding: 5px 14px;
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 11.5px;
+            font-weight: 700;
             margin-top: 6px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            letter-spacing: 0.5px;
         }
 
         .counter-badge {
             display: block;
             font-size: 11px;
             color: #64748b;
-            font-weight: 600;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.8px;
         }
 
         p.desc {
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 13.5px;
             margin-bottom: 20px;
             line-height: 1.5;
         }
 
+        /* Tarjetas de descargas */
         .card {
-            background: rgba(22, 24, 33, 0.75);
+            background: rgba(18, 20, 29, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
+            border-radius: 22px;
             padding: 18px;
             margin-bottom: 16px;
             text-align: left;
-            transition: all 0.25s ease;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -130,35 +139,34 @@
             width: 4px;
             height: 100%;
             background: linear-gradient(180deg, #a855f7, #3b82f6);
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: rgba(168, 85, 247, 0.5);
-            box-shadow: 0 12px 30px -5px rgba(168, 85, 247, 0.35);
+            box-shadow: 0 14px 35px rgba(168, 85, 247, 0.25);
         }
 
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .card-date {
             font-size: 11px;
             color: #c084fc;
-            font-weight: 600;
-            text-transform: uppercase;
+            font-weight: 700;
             letter-spacing: 0.5px;
         }
 
         .tag-new {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
             color: #fff;
             font-size: 10px;
-            font-weight: 700;
+            font-weight: 800;
             padding: 3px 9px;
             border-radius: 12px;
             text-transform: uppercase;
@@ -170,75 +178,78 @@
             font-size: 16px;
             color: #ffffff;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 700;
+            line-height: 1.3;
         }
 
         .card p {
             font-size: 13px;
             color: #94a3b8;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             line-height: 1.4;
         }
 
         .instructions {
-            font-size: 15px !important;
-            color: #e2e8f0 !important;
-            line-height: 1.6 !important;
-            margin-top: 10px;
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-top: 8px;
             margin-bottom: 14px;
             background: rgba(255, 255, 255, 0.03);
             padding: 12px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .instructions b {
             color: #c084fc;
         }
 
+        /* Contenedor de Keys */
         .key-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(30, 34, 48, 0.6);
-            border: 1px dashed rgba(59, 130, 246, 0.5);
-            padding: 8px 12px;
-            border-radius: 18px;
+            background: rgba(30, 35, 50, 0.7);
+            border: 1px dashed rgba(168, 85, 247, 0.4);
+            padding: 9px 12px;
+            border-radius: 14px;
             margin-top: 10px;
             gap: 8px;
         }
 
         .key-text {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 13px;
+            color: #f1f5f9;
+            font-weight: 700;
+            font-size: 12.5px;
             letter-spacing: 0.5px;
             word-break: break-all;
         }
 
         .copy-btn {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            background: linear-gradient(135deg, #a855f7, #7e22ce);
             color: #ffffff;
             border: none;
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 11.5px;
-            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
             white-space: nowrap;
         }
 
         .copy-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
+            transform: scale(1.03);
+            opacity: 0.95;
         }
 
         .copy-btn:active {
             transform: scale(0.96);
         }
 
+        /* Botones estilo iOS / Gaming */
         .btn {
             display: flex;
             align-items: center;
@@ -246,10 +257,10 @@
             gap: 8px;
             width: 100%;
             padding: 12px 16px;
-            border-radius: 20px;
+            border-radius: 14px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 13.5px;
+            font-weight: 700;
+            font-size: 13px;
             text-align: center;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -264,42 +275,46 @@
         .btn-main {
             background: #25d366;
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            margin-bottom: 15px;
-            border-radius: 22px;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+            margin-bottom: 18px;
+            border-radius: 16px;
+            font-size: 14px;
+            padding: 14px;
         }
 
         .btn-main:hover {
-            background: #1ebd59;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            background: #20bd5a;
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
         }
 
         .btn-mediafire {
-            background: linear-gradient(135deg, #a855f7, #7e22ce);
-            color: #ffffff;
-            box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3);
-        }
-
-        .btn-mediafire:hover {
-            box-shadow: 0 6px 18px rgba(168, 85, 247, 0.5);
-        }
-
-        .btn-key {
             background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: #ffffff;
             box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
         }
 
+        .btn-mediafire:hover {
+            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
+        }
+
+        .btn-key {
+            background: rgba(255, 255, 255, 0.06);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
         .btn-key:hover {
-            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.5);
+            background: rgba(168, 85, 247, 0.2);
+            color: #ffffff;
         }
 
         .btn-whatsapp {
-            background: rgba(30, 34, 48, 0.8);
+            background: rgba(30, 34, 48, 0.9);
             color: #c084fc;
             border: 1px solid rgba(168, 85, 247, 0.4);
-            border-radius: 22px;
+            border-radius: 16px;
             margin-top: 15px;
+            padding: 13px;
         }
 
         .btn-whatsapp:hover {
@@ -308,10 +323,10 @@
         }
 
         footer {
-            margin-top: auto;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-bottom: 10px;
             font-size: 12px;
-            color: #64748b;
+            color: #475569;
         }
     </style>
 </head>
@@ -336,7 +351,7 @@
             🚀 UNIRSE AL CANAL DE WHATSAPP
         </a>
 
-        <!-- TARJETA NUEVA 1: NETWORK GAME V16 FIREWALL -->
+        <!-- TARJETA 1: NETWORK GAME V16 FIREWALL -->
         <div class="card">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 08/09/2026</span>
@@ -437,7 +452,7 @@
                 <span class="card-date">📅 SUBIDO: 06/09/2026</span>
             </div>
             <h3>👹 PROXY MENU MTH TEAM ACTUALIZADO V23 👹</h3>
-            <p>• Menú Proxy Mth Team V23 completamenta actualizado.<br>• Incluye Free Fire MAX v2.131.1 optimizado.</p>
+            <p>• Menú Proxy Mth Team V23 completamente actualizado.<br>• Incluye Free Fire MAX v2.131.1 optimizado.</p>
             
             <a href="https://www.mediafire.com/file/x6ic9rgl843bqem/Proxy+Mth+Team+v23+Menu.zip/file" target="_blank" class="btn btn-mediafire">
                 📥 Descargar Proxy Mth Team V23 Menu (.zip)
