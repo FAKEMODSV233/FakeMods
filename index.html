@@ -115,6 +115,7 @@
             line-height: 1.5;
         }
 
+        /* CARD ESTÁNDAR */
         .card {
             background: rgba(18, 20, 29, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -144,6 +145,36 @@
             transform: translateY(-4px);
             border-color: rgba(168, 85, 247, 0.5);
             box-shadow: 0 14px 35px rgba(168, 85, 247, 0.25);
+        }
+
+        /* ESTILO ESPECIAL MORADO PARA FAKE MODS / FAKE HACK */
+        .card-special {
+            background: linear-gradient(145deg, rgba(35, 18, 55, 0.95), rgba(18, 12, 32, 0.95));
+            border: 1.5px solid rgba(192, 132, 252, 0.5);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+        }
+
+        .card-special::before {
+            background: linear-gradient(180deg, #e879f9, #a855f7, #c084fc);
+            width: 5px;
+        }
+
+        .card-special:hover {
+            transform: translateY(-5px) scale(1.01);
+            border-color: #e879f9;
+            box-shadow: 0 0 40px rgba(192, 132, 252, 0.5);
+        }
+
+        .tag-special {
+            background: linear-gradient(135deg, #d946ef, #8b5cf6);
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 9px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            box-shadow: 0 0 12px rgba(217, 70, 239, 0.7);
+            letter-spacing: 0.5px;
         }
 
         .card-header {
@@ -229,6 +260,11 @@
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
+        .card-special .instructions {
+            background: rgba(168, 85, 247, 0.08);
+            border-color: rgba(192, 132, 252, 0.2);
+        }
+
         .instructions b {
             color: #c084fc;
         }
@@ -243,6 +279,11 @@
             border-radius: 14px;
             margin-top: 10px;
             gap: 8px;
+        }
+
+        .card-special .key-container {
+            background: rgba(45, 22, 72, 0.6);
+            border-color: rgba(232, 121, 249, 0.5);
         }
 
         .key-text {
@@ -323,6 +364,17 @@
             box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
         }
 
+        /* BOTÓN DESTACADO MORADO */
+        .btn-special {
+            background: linear-gradient(135deg, #a855f7, #d946ef);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+
+        .btn-special:hover {
+            box-shadow: 0 6px 20px rgba(217, 70, 239, 0.6);
+        }
+
         .btn-key {
             background: rgba(255, 255, 255, 0.06);
             color: #d8b4fe;
@@ -369,19 +421,45 @@
         
         <p class="desc">🔥 DESCARGA LO MÁS NUEVO Y RECIENTE AQUÍ 🔥<br>Lo último en optimizaciones y herramientas subidas al instante.</p>
         
-        <span class="counter-badge">📌 MOSTRANDO TOP 15 ARCHIVOS MÁS RECIENTES</span>
+        <span class="counter-badge">📌 MOSTRANDO TOP 16 ARCHIVOS MÁS RECIENTES</span>
 
         <a href="https://whatsapp.com/channel/0029Vb8MejvKLaHfkVTKNL2L" target="_blank" class="btn btn-main">
             🚀 UNIRSE AL CANAL DE WHATSAPP
         </a>
 
-        <!-- ÚNICA TARJETA FIJADA: FAKE HACK -->
-        <div class="card">
+        <!-- TARJETA: FAKE MODS WIRE V3 (CON KEY INCLUIDA) -->
+        <div class="card card-special">
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 11/09/2026</span>
+                <div class="tag-group">
+                    <span class="tag-special">👑 FAKE MODS</span>
+                    <span class="tag-new">NUEVO</span>
+                </div>
+            </div>
+            <h3>⚡ FAKE MODS WIRE V3 APK ⚡</h3>
+            <p>• La mejor herramienta optimizada de Fake Mods con máxima estabilidad.<br>• Compatible con Free Fire MAX.</p>
+
+            <a href="https://www.mediafire.com/file/dxidyjl9bs3xo7n/FAKE+MODS+WIRE+V3.apk/file" target="_blank" class="btn btn-special">
+                📥 Descargar Fake Mods Wire V3 (.apk)
+            </a>
+
+            <a href="https://modsff.com/ffmax" target="_blank" class="btn btn-mediafire">
+                🔥 Descargar Free Fire MAX
+            </a>
+
+            <div class="key-container">
+                <span class="key-text">KEY: B2AL VIP</span>
+                <button class="copy-btn" onclick="copyKey('B2AL VIP', this)">📋 Copiar Key</button>
+            </div>
+        </div>
+
+        <!-- ÚNICA TARJETA FIJADA: FAKE HACK (PRODUCTO FAKE MODS / DESTACADO) -->
+        <div class="card card-special">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 09/09/2026</span>
                 <div class="tag-group">
                     <span class="tag-pinned">📌 FIJADO</span>
-                    <span class="tag-full">FULL</span>
+                    <span class="tag-special">👑 FAKE HACK</span>
                 </div>
             </div>
             <h3>💬 FAKE HACK ⚡</h3>
@@ -392,7 +470,7 @@
                 Mantener presionado 5 segundos y soltar para bloquear o desbloquear la posición de los botones.
             </div>
 
-            <a href="https://www.mediafire.com/file/jklz1jprc4f9n4a/FakeHack.apk/file" target="_blank" class="btn btn-mediafire">
+            <a href="https://www.mediafire.com/file/jklz1jprc4f9n4a/FakeHack.apk/file" target="_blank" class="btn btn-special">
                 📥 Descargar FakeHack (.apk)
             </a>
 
@@ -429,7 +507,7 @@
             </a>
         </div>
 
-        <!-- TARJETA: VELQERIX V1.1 (ACTUALIZADA) -->
+        <!-- TARJETA: VELQERIX V1.1 -->
         <div class="card">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 11/09/2026</span>
@@ -711,14 +789,15 @@
         </div>
 
         <!-- TARJETA: FAKE LAG V3 -->
-        <div class="card">
+        <div class="card card-special">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 05/09/2026</span>
+                <span class="tag-special">👑 FAKE MODS</span>
             </div>
             <h3>💬 FAKE LAG V3 ACTUALIZADO PRINCIPAL ONLINE 🤩</h3>
             <p>• Versión más reciente optimizada para ping estable y control de lag.<br>• Key permanente incluida lista para usar.</p>
             
-            <a href="https://www.mediafire.com/file/7dw3vr787t8pf3m/YOONSOXIT+PING+V3.apk/file" target="_blank" class="btn btn-mediafire">
+            <a href="https://www.mediafire.com/file/7dw3vr787t8pf3m/YOONSOXIT+PING+V3.apk/file" target="_blank" class="btn btn-special">
                 📥 Descargar Fake Lag V3 (.apk)
             </a>
             
