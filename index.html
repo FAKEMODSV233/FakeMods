@@ -147,7 +147,7 @@
             box-shadow: 0 14px 35px rgba(168, 85, 247, 0.25);
         }
 
-        /* ESTILO ESPECIAL MORADO PARA FAKE MODS / FAKE HACK */
+        /* ESTILO ESPECIAL MORADO PARA FAKE MODS */
         .card-special {
             background: linear-gradient(145deg, rgba(35, 18, 55, 0.95), rgba(18, 12, 32, 0.95));
             border: 1.5px solid rgba(192, 132, 252, 0.5);
@@ -163,6 +163,29 @@
             transform: translateY(-5px) scale(1.01);
             border-color: #e879f9;
             box-shadow: 0 0 40px rgba(192, 132, 252, 0.5);
+        }
+
+        /* ESTILO ROJO INTENSO DE PELIGRO PARA PARCHADOS / ADVERTENCIAS */
+        .card-danger {
+            background: linear-gradient(145deg, rgba(50, 10, 15, 0.95), rgba(25, 5, 8, 0.95));
+            border: 1.5px solid rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
+        }
+
+        .card-danger::before {
+            background: linear-gradient(180deg, #ff0000, #ef4444, #991b1b);
+            width: 5px;
+        }
+
+        .card-danger:hover {
+            transform: translateY(-5px) scale(1.01);
+            border-color: #ff4d4d;
+            box-shadow: 0 0 40px rgba(239, 68, 68, 0.5);
+        }
+
+        .card-danger .instructions {
+            background: rgba(239, 68, 68, 0.08);
+            border-color: rgba(239, 68, 68, 0.25);
         }
 
         .tag-special {
@@ -189,6 +212,10 @@
             color: #c084fc;
             font-weight: 700;
             letter-spacing: 0.5px;
+        }
+
+        .card-danger .card-date {
+            color: #fca5a5;
         }
 
         .tag-group {
@@ -222,14 +249,14 @@
         }
 
         .tag-patched {
-            background: linear-gradient(135deg, #dc2626, #991b1b);
+            background: linear-gradient(135deg, #ff0000, #991b1b);
             color: #ffffff;
             font-size: 10px;
             font-weight: 800;
             padding: 3px 9px;
             border-radius: 12px;
             text-transform: uppercase;
-            box-shadow: 0 0 12px rgba(220, 38, 38, 0.7);
+            box-shadow: 0 0 14px rgba(255, 0, 0, 0.8);
             letter-spacing: 0.5px;
         }
 
@@ -269,6 +296,10 @@
             color: #c084fc;
         }
 
+        .card-danger .instructions b {
+            color: #f87171;
+        }
+
         .key-container {
             display: flex;
             align-items: center;
@@ -284,6 +315,11 @@
         .card-special .key-container {
             background: rgba(45, 22, 72, 0.6);
             border-color: rgba(232, 121, 249, 0.5);
+        }
+
+        .card-danger .key-container {
+            background: rgba(60, 15, 20, 0.7);
+            border-color: rgba(239, 68, 68, 0.5);
         }
 
         .key-text {
@@ -306,6 +342,11 @@
             transition: all 0.2s ease;
             box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
             white-space: nowrap;
+        }
+
+        .card-danger .copy-btn {
+            background: linear-gradient(135deg, #ef4444, #991b1b);
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
         }
 
         .copy-btn:hover {
@@ -385,8 +426,14 @@
             box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
         }
 
-        .btn-special:hover {
-            box-shadow: 0 6px 20px rgba(217, 70, 239, 0.6);
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #991b1b);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-danger:hover {
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
         }
 
         .btn-key {
@@ -457,43 +504,31 @@
             🔑 CANAL DE TUTOS & KEYS EN WHATSAPP
         </a>
 
-        <!-- 1. 📌 TARJETA FIJADA PRIMERO: FAKE HACK -->
-        <div class="card card-special">
+        <!-- 1. 🆕 TARJETA NUEVA: MTH TEAM V25 FULL SAFE -->
+        <div class="card">
             <div class="card-header">
-                <span class="card-date">📅 SUBIDO: 09/09/2026</span>
-                <div class="tag-group">
-                    <span class="tag-pinned">📌 FIJADO</span>
-                    <span class="tag-special">👑 FAKE HACK</span>
-                </div>
+                <span class="card-date">📅 SUBIDO: 14/09/2026</span>
+                <span class="tag-new">NUEVO</span>
             </div>
-            <h3>💬 FAKE HACK ⚡</h3>
-            <p>• Funcionalidad: *FREEZE + GHOST*<br>• Créditos: ATT: FAKEMODS GROUP</p>
-            
-            <div class="instructions">
-                <b>📌 INSTRUCCIONES:</b><br>
-                Mantener presionado 5 segundos y soltar para bloquear o desbloquear la posición de los botones.
-            </div>
+            <h3>🛡️ MTH TEAM V25 FULL SAFE 🛡️</h3>
+            <p>
+                • 🎮 <b>Versión:</b> Proxy MTH Team v25 Menu.<br>
+                • ⚡ Alta estabilidad y compatibilidad safe.
+            </p>
 
-            <a href="https://www.mediafire.com/file/jklz1jprc4f9n4a/FakeHack.apk/file" target="_blank" class="btn btn-special">
-                📥 Descargar FakeHack (.apk)
+            <a href="https://www.mediafire.com/file/uxbegapk6nh2mnv/Proxy_Mth_Team_v25_Menu.zip/file?dkey=7p2cwwvpobt&r=1939" target="_blank" class="btn btn-mediafire">
+                📥 Descargar Proxy MTH Team V25 (.zip)
             </a>
 
-            <div class="key-container">
-                <span class="key-text">USUARIO: FakeLag</span>
-                <button class="copy-btn" onclick="copyKey('FakeLag', this)">📋 Copiar</button>
-            </div>
-
-            <div class="key-container">
-                <span class="key-text">CONTRASEÑA: Hack</span>
-                <button class="copy-btn" onclick="copyKey('Hack', this)">📋 Copiar</button>
-            </div>
+            <a href="https://mthteam.com/getkey" target="_blank" class="btn btn-key">
+                🔑 Generar Key MTH Team Aquí
+            </a>
         </div>
 
-        <!-- 2. TARJETA NUEVA: PATO TEAM MODZ -->
+        <!-- 2. TARJETA: PATO TEAM MODZ -->
         <div class="card">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 13/09/2026</span>
-                <span class="tag-new">NUEVO</span>
             </div>
             <h3>💬 PATO TEAM MODZ 👹</h3>
             <p>
@@ -728,7 +763,38 @@
             </a>
         </div>
 
-        <!-- 13. TARJETA: PROXY P1 -->
+        <!-- 13. TARJETA: FAKE HACK (DESFIJADO Y PARCHADO CON COLOR ROJO PELIGRO) -->
+        <div class="card card-danger">
+            <div class="card-header">
+                <span class="card-date">📅 SUBIDO: 09/09/2026</span>
+                <div class="tag-group">
+                    <span class="tag-patched">🚫 PARCHADO</span>
+                </div>
+            </div>
+            <h3>💬 FAKE HACK ⚡</h3>
+            <p>• Funcionalidad: *FREEZE + GHOST*<br>• Créditos: ATT: FAKEMODS GROUP</p>
+            
+            <div class="instructions">
+                <b>📌 INSTRUCCIONES:</b><br>
+                Mantener presionado 5 segundos y soltar para bloquear o desbloquear la posición de los botones.
+            </div>
+
+            <a href="https://www.mediafire.com/file/jklz1jprc4f9n4a/FakeHack.apk/file" target="_blank" class="btn btn-danger">
+                📥 Descargar FakeHack (.apk)
+            </a>
+
+            <div class="key-container">
+                <span class="key-text">USUARIO: FakeLag</span>
+                <button class="copy-btn" onclick="copyKey('FakeLag', this)">📋 Copiar</button>
+            </div>
+
+            <div class="key-container">
+                <span class="key-text">CONTRASEÑA: Hack</span>
+                <button class="copy-btn" onclick="copyKey('Hack', this)">📋 Copiar</button>
+            </div>
+        </div>
+
+        <!-- 14. TARJETA: PROXY P1 -->
         <div class="card">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 08/09/2026</span>
@@ -749,7 +815,7 @@
             </a>
         </div>
 
-        <!-- 14. TARJETA: PROXY AIM SILENT -->
+        <!-- 15. TARJETA: PROXY AIM SILENT -->
         <div class="card">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 08/09/2026</span>
@@ -764,29 +830,6 @@
             <a href="https://sx2lador.online/GetKey.php" target="_blank" class="btn btn-key">
                 🔑 Generar Tu Key Gratis Aquí
             </a>
-        </div>
-
-        <!-- 15. TARJETA: NETWORK GAME V16 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-date">📅 SUBIDO: 08/09/2026</span>
-            </div>
-            <h3>🔥 NETWORK GAME V16 FIREWALL GLOBAL – APKMOD 🥷</h3>
-            <p>• Sem Root | Compatível com CS Rank / BR Rank / Personalizada<br>• Black List Corregido & Mayor Seguridad<br>• Teleport Infinito + Bypass Royale IA + Optimizado</p>
-            
-            <div class="instructions">
-                <b>⚠️ RECOMENDACIONES:</b><br>
-                Activa el Bypass Royale y <b>NO entres a entrenamiento</b> (lo marca como partida; solo BR / Clasificatoria / otros modos).
-            </div>
-
-            <a href="https://www.mediafire.com/file/kcqi8moiimquy2r/Network+Game+V16+FIREWALL+BY+PASS.apk/file" target="_blank" class="btn btn-mediafire">
-                📥 Descargar Network Game V16 (.apk)
-            </a>
-
-            <div class="key-container">
-                <span class="key-text">KEY: NETWORK-FREE-7K</span>
-                <button class="copy-btn" onclick="copyKey('NETWORK-FREE-7K', this)">📋 Copiar Key</button>
-            </div>
         </div>
 
         <a href="https://whatsapp.com/channel/0029Vb8MejvKLaHfkVTKNL2L" target="_blank" class="btn btn-whatsapp">
