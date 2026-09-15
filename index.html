@@ -9,20 +9,21 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0a0b0e;
+            background-color: #080511;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 20px 14px;
+            padding: 24px 14px;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.25), transparent 60%),
-                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15), transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.35), transparent 50%),
+                radial-gradient(circle at 10% 40%, rgba(217, 70, 239, 0.15), transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(147, 51, 234, 0.2), transparent 45%);
             background-attachment: fixed;
         }
 
@@ -35,33 +36,33 @@
         .profile-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 115px;
+            height: 115px;
             border-radius: 50%;
-            border: 3px solid #a855f7;
-            box-shadow: 0 0 35px rgba(168, 85, 247, 0.7);
+            border: 3px solid #c084fc;
+            box-shadow: 0 0 35px rgba(192, 132, 252, 0.8), 0 0 15px rgba(168, 85, 247, 0.5);
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .profile-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(2deg);
         }
 
         .status-dot {
             position: absolute;
             bottom: 6px;
             right: 6px;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             background-color: #22c55e;
-            border: 3px solid #0a0b0e;
+            border: 3.5px solid #080511;
             border-radius: 50%;
-            box-shadow: 0 0 12px #22c55e;
+            box-shadow: 0 0 14px #22c55e;
             animation: pulse 2s infinite;
         }
 
@@ -72,60 +73,61 @@
         }
 
         h1 {
-            font-size: 28px;
-            color: #ffffff;
+            font-size: 32px;
             letter-spacing: -0.5px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, #c084fc 100%);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 20%, #e879f9 60%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+            text-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(168, 85, 247, 0.15);
-            color: #d8b4fe;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            padding: 5px 14px;
+            background: rgba(168, 85, 247, 0.18);
+            color: #f0abfc;
+            border: 1px solid rgba(192, 132, 252, 0.45);
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 11.5px;
-            font-weight: 700;
-            margin-top: 6px;
+            font-weight: 800;
+            margin-top: 8px;
             margin-bottom: 16px;
-            backdrop-filter: blur(10px);
-            letter-spacing: 0.5px;
+            backdrop-filter: blur(12px);
+            letter-spacing: 0.8px;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
         }
 
         .counter-badge {
             display: block;
             font-size: 11px;
-            color: #64748b;
+            color: #a78bfa;
             font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: 0.8px;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         p.desc {
-            color: #94a3b8;
-            font-size: 13.5px;
-            margin-bottom: 20px;
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 22px;
             line-height: 1.5;
         }
 
-        /* CARD ESTÁNDAR */
+        /* CARD GENERAL CON TEMA LILA / VIOLETA */
         .card {
-            background: rgba(18, 20, 29, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(20, 14, 35, 0.75);
+            border: 1px solid rgba(168, 85, 247, 0.25);
             border-radius: 22px;
-            padding: 18px;
-            margin-bottom: 16px;
+            padding: 20px;
+            margin-bottom: 18px;
             text-align: left;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            backdrop-filter: blur(16px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -137,79 +139,61 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, #a855f7, #3b82f6);
+            background: linear-gradient(180deg, #d946ef, #8b5cf6);
             opacity: 0.9;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(168, 85, 247, 0.5);
-            box-shadow: 0 14px 35px rgba(168, 85, 247, 0.25);
+            transform: translateY(-5px);
+            border-color: rgba(192, 132, 252, 0.6);
+            box-shadow: 0 16px 40px rgba(168, 85, 247, 0.35);
         }
 
-        /* ESTILO ESPECIAL MORADO PARA FAKE MODS */
+        /* EDICIÓN DESTACADA FAKE MODS (ULTRA GLOW) */
         .card-special {
-            background: linear-gradient(145deg, rgba(35, 18, 55, 0.95), rgba(18, 12, 32, 0.95));
-            border: 1.5px solid rgba(192, 132, 252, 0.5);
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+            background: linear-gradient(145deg, rgba(45, 18, 70, 0.85), rgba(22, 10, 40, 0.9));
+            border: 1.5px solid rgba(232, 121, 249, 0.6);
+            box-shadow: 0 0 30px rgba(217, 70, 239, 0.35);
         }
 
         .card-special::before {
-            background: linear-gradient(180deg, #e879f9, #a855f7, #c084fc);
+            background: linear-gradient(180deg, #f472b6, #e879f9, #a855f7);
             width: 5px;
         }
 
         .card-special:hover {
             transform: translateY(-5px) scale(1.01);
-            border-color: #e879f9;
-            box-shadow: 0 0 40px rgba(192, 132, 252, 0.5);
+            border-color: #f472b6;
+            box-shadow: 0 0 45px rgba(232, 121, 249, 0.55);
         }
 
-        /* ESTILO ROJO INTENSO DE PELIGRO PARA PARCHADOS / ADVERTENCIAS */
+        /* CARD ALERTA / PARCHADO */
         .card-danger {
-            background: linear-gradient(145deg, rgba(50, 10, 15, 0.95), rgba(25, 5, 8, 0.95));
-            border: 1.5px solid rgba(239, 68, 68, 0.6);
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
+            background: linear-gradient(145deg, rgba(45, 10, 25, 0.85), rgba(20, 5, 12, 0.9));
+            border: 1.5px solid rgba(244, 63, 94, 0.5);
+            box-shadow: 0 0 25px rgba(244, 63, 94, 0.25);
         }
 
         .card-danger::before {
-            background: linear-gradient(180deg, #ff0000, #ef4444, #991b1b);
+            background: linear-gradient(180deg, #ff4d4d, #f43f5e, #9f1239);
             width: 5px;
         }
 
         .card-danger:hover {
-            transform: translateY(-5px) scale(1.01);
             border-color: #ff4d4d;
-            box-shadow: 0 0 40px rgba(239, 68, 68, 0.5);
-        }
-
-        .card-danger .instructions {
-            background: rgba(239, 68, 68, 0.08);
-            border-color: rgba(239, 68, 68, 0.25);
-        }
-
-        .tag-special {
-            background: linear-gradient(135deg, #d946ef, #8b5cf6);
-            color: #ffffff;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 3px 9px;
-            border-radius: 12px;
-            text-transform: uppercase;
-            box-shadow: 0 0 12px rgba(217, 70, 239, 0.7);
-            letter-spacing: 0.5px;
+            box-shadow: 0 0 35px rgba(244, 63, 94, 0.45);
         }
 
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .card-date {
             font-size: 11px;
-            color: #c084fc;
+            color: #d8b4fe;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
@@ -224,138 +208,133 @@
             align-items: center;
         }
 
-        .tag-pinned {
-            background: linear-gradient(135deg, #a855f7, #6b21a8);
-            color: #fff;
+        .tag-special {
+            background: linear-gradient(135deg, #e879f9, #a855f7);
+            color: #ffffff;
             font-size: 10px;
             font-weight: 800;
-            padding: 3px 9px;
+            padding: 3px 10px;
             border-radius: 12px;
             text-transform: uppercase;
-            box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+            box-shadow: 0 0 12px rgba(232, 121, 249, 0.7);
             letter-spacing: 0.5px;
         }
 
         .tag-new {
-            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
             color: #fff;
             font-size: 10px;
             font-weight: 800;
-            padding: 3px 9px;
+            padding: 3px 10px;
             border-radius: 12px;
             text-transform: uppercase;
-            box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 14px rgba(236, 72, 153, 0.7);
             letter-spacing: 0.5px;
         }
 
         .tag-patched {
-            background: linear-gradient(135deg, #ff0000, #991b1b);
+            background: linear-gradient(135deg, #f43f5e, #881337);
             color: #ffffff;
             font-size: 10px;
             font-weight: 800;
-            padding: 3px 9px;
+            padding: 3px 10px;
             border-radius: 12px;
             text-transform: uppercase;
-            box-shadow: 0 0 14px rgba(255, 0, 0, 0.8);
+            box-shadow: 0 0 14px rgba(244, 63, 94, 0.7);
             letter-spacing: 0.5px;
         }
 
         .card h3 {
-            font-size: 16px;
+            font-size: 17px;
             color: #ffffff;
             margin-bottom: 8px;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.3;
         }
 
         .card p {
-            font-size: 13px;
-            color: #94a3b8;
+            font-size: 13.5px;
+            color: #cbd5e1;
             margin-bottom: 12px;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         .instructions {
             font-size: 13px;
-            color: #cbd5e1;
+            color: #e2e8f0;
             line-height: 1.5;
-            margin-top: 8px;
+            margin-top: 10px;
             margin-bottom: 14px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 12px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(168, 85, 247, 0.1);
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid rgba(192, 132, 252, 0.25);
         }
 
-        .card-special .instructions {
-            background: rgba(168, 85, 247, 0.08);
-            border-color: rgba(192, 132, 252, 0.2);
+        .card-danger .instructions {
+            background: rgba(244, 63, 94, 0.1);
+            border-color: rgba(244, 63, 94, 0.3);
         }
 
         .instructions b {
-            color: #c084fc;
+            color: #f0abfc;
         }
 
         .card-danger .instructions b {
-            color: #f87171;
+            color: #fca5a5;
         }
 
         .key-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(30, 35, 50, 0.7);
-            border: 1px dashed rgba(168, 85, 247, 0.4);
-            padding: 9px 12px;
+            background: rgba(35, 20, 55, 0.75);
+            border: 1px dashed rgba(192, 132, 252, 0.5);
+            padding: 10px 14px;
             border-radius: 14px;
             margin-top: 10px;
             gap: 8px;
         }
 
-        .card-special .key-container {
-            background: rgba(45, 22, 72, 0.6);
-            border-color: rgba(232, 121, 249, 0.5);
-        }
-
         .card-danger .key-container {
-            background: rgba(60, 15, 20, 0.7);
-            border-color: rgba(239, 68, 68, 0.5);
+            background: rgba(50, 15, 25, 0.75);
+            border-color: rgba(244, 63, 94, 0.5);
         }
 
         .key-text {
-            color: #f1f5f9;
+            color: #f8fafc;
             font-weight: 700;
-            font-size: 12.5px;
+            font-size: 13px;
             letter-spacing: 0.5px;
             word-break: break-all;
         }
 
         .copy-btn {
-            background: linear-gradient(135deg, #a855f7, #7e22ce);
+            background: linear-gradient(135deg, #c084fc, #9333ea);
             color: #ffffff;
             border: none;
-            padding: 6px 14px;
+            padding: 7px 15px;
             border-radius: 10px;
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 11.5px;
+            font-weight: 800;
             cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
+            transition: all 0.25 ease;
+            box-shadow: 0 3px 10px rgba(168, 85, 247, 0.4);
             white-space: nowrap;
         }
 
         .card-danger .copy-btn {
-            background: linear-gradient(135deg, #ef4444, #991b1b);
-            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+            background: linear-gradient(135deg, #f43f5e, #be123c);
+            box-shadow: 0 3px 10px rgba(244, 63, 94, 0.4);
         }
 
         .copy-btn:hover {
-            transform: scale(1.03);
-            opacity: 0.95;
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         .copy-btn:active {
-            transform: scale(0.96);
+            transform: scale(0.95);
         }
 
         .btn {
@@ -364,118 +343,98 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            padding: 12px 16px;
+            padding: 13px 16px;
             border-radius: 14px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
+            font-weight: 800;
+            font-size: 13.5px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 8px;
+            transition: all 0.25s ease;
+            margin-top: 9px;
             border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
         }
 
         .btn:active {
             transform: scale(0.98);
         }
 
+        /* BOTONES CANALES */
         .btn-main {
-            background: #25d366;
+            background: linear-gradient(135deg, #22c55e, #15803d);
             color: #ffffff;
-            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
-            margin-bottom: 10px;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+            margin-bottom: 12px;
             border-radius: 16px;
-            font-size: 14px;
-            padding: 14px;
-        }
-
-        .btn-main:hover {
-            background: #20bd5a;
-            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+            font-size: 14.5px;
+            padding: 15px;
         }
 
         .btn-secondary-wa {
-            background: linear-gradient(135deg, #059669, #10b981);
+            background: linear-gradient(135deg, #a855f7, #6b21a8);
             color: #ffffff;
-            box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
-            margin-bottom: 18px;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+            margin-bottom: 20px;
             border-radius: 16px;
-            font-size: 14px;
-            padding: 14px;
+            font-size: 14.5px;
+            padding: 15px;
         }
 
-        .btn-secondary-wa:hover {
-            background: #047857;
-            box-shadow: 0 6px 22px rgba(16, 185, 129, 0.45);
-        }
-
+        /* BOTONES MEDIAFIRE Y GENERALES (REDISEÑADOS EN LILA/AZUL VIBRANTE) */
         .btn-mediafire {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            background: linear-gradient(135deg, #7c3aed, #4c1d95);
             color: #ffffff;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-mediafire:hover {
-            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
         }
 
         .btn-special {
-            background: linear-gradient(135deg, #a855f7, #d946ef);
+            background: linear-gradient(135deg, #e879f9, #a855f7);
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 4px 18px rgba(232, 121, 249, 0.45);
         }
 
         .btn-danger {
-            background: linear-gradient(135deg, #ef4444, #991b1b);
+            background: linear-gradient(135deg, #f43f5e, #9f1239);
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-        }
-
-        .btn-danger:hover {
-            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
         }
 
         .btn-key {
-            background: rgba(255, 255, 255, 0.06);
-            color: #d8b4fe;
-            border: 1px solid rgba(168, 85, 247, 0.3);
+            background: rgba(168, 85, 247, 0.12);
+            color: #f0abfc;
+            border: 1px solid rgba(192, 132, 252, 0.4);
         }
 
         .btn-key:hover {
-            background: rgba(168, 85, 247, 0.2);
+            background: rgba(168, 85, 247, 0.3);
             color: #ffffff;
         }
 
         .btn-youtube {
-            background: linear-gradient(135deg, #ff0000, #cc0000);
+            background: linear-gradient(135deg, #ef4444, #991b1b);
             color: #ffffff;
-            box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3);
-        }
-
-        .btn-youtube:hover {
-            box-shadow: 0 6px 18px rgba(255, 0, 0, 0.45);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35);
         }
 
         .btn-whatsapp {
-            background: rgba(30, 34, 48, 0.9);
-            color: #c084fc;
-            border: 1px solid rgba(168, 85, 247, 0.4);
+            background: rgba(25, 16, 42, 0.9);
+            color: #f0abfc;
+            border: 1px solid rgba(192, 132, 252, 0.4);
             border-radius: 16px;
-            margin-top: 15px;
-            padding: 13px;
-        }
-
-        .btn-whatsapp:hover {
-            background: #a855f7;
-            color: #ffffff;
+            margin-top: 18px;
+            padding: 14px;
         }
 
         footer {
-            margin-top: 25px;
-            padding-bottom: 10px;
+            margin-top: 30px;
+            padding-bottom: 12px;
             font-size: 12px;
-            color: #475569;
+            color: #64748b;
         }
     </style>
 </head>
@@ -492,7 +451,7 @@
         
         <p class="desc">🔥 DESCARGA LO MÁS NUEVO Y RECIENTE AQUÍ 🔥<br>Lo último en optimizaciones y herramientas subidas al instante.</p>
         
-        <span class="counter-badge">📌 MOSTRANDO TOP 15 ARCHIVOS MÁS RECIENTES</span>
+        <span class="counter-badge" id="card-counter">📌 MOSTRANDO ARCHIVOS MÁS RECIENTES</span>
 
         <!-- BOTÓN CANAL PRINCIPAL -->
         <a href="https://whatsapp.com/channel/0029Vb8MejvKLaHfkVTKNL2L" target="_blank" class="btn btn-main">
@@ -604,7 +563,7 @@
         </div>
 
         <!-- 5. TARJETA: SILENT CHEATS ATT MOD MENU VII (PARCHADO) -->
-        <div class="card">
+        <div class="card card-danger">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 13/09/2026</span>
                 <span class="tag-patched">🚫 PARCHADO</span>
@@ -617,7 +576,7 @@
                 • 🆕 100% RANK BR
             </p>
 
-            <a href="https://www.mediafire.com/file/bamquz5eouw1tr6/SILENT+CHEATS+ATT+MOD+MENU+VII.apks/file" target="_blank" class="btn btn-mediafire">
+            <a href="https://www.mediafire.com/file/bamquz5eouw1tr6/SILENT+CHEATS+ATT+MOD+MENU+VII.apks/file" target="_blank" class="btn btn-danger">
                 📥 Descargar Silent Cheats Mod Menu VII (.apks)
             </a>
 
@@ -719,7 +678,7 @@
                 🔥 Descargar FF MAX Original
             </a>
             
-            <p style="font-size: 11.5px; color: #94a3b8; margin-top: 6px; margin-bottom: 0; text-align: center;">
+            <p style="font-size: 11.5px; color: #a78bfa; margin-top: 6px; margin-bottom: 0; text-align: center;">
                 <i>*Si quieres generar más solo le das a eso*</i>
             </p>
         </div>
@@ -797,7 +756,7 @@
             </a>
         </div>
 
-        <!-- 14. TARJETA: FAKE HACK (DESFIJADO Y PARCHADO CON COLOR ROJO PELIGRO) -->
+        <!-- 14. TARJETA: FAKE HACK (PARCHADO CON COLOR ROJO ALERTA) -->
         <div class="card card-danger">
             <div class="card-header">
                 <span class="card-date">📅 SUBIDO: 09/09/2026</span>
@@ -859,6 +818,14 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const count = document.querySelectorAll('.card').length;
+            const counterBadge = document.getElementById('card-counter');
+            if (counterBadge) {
+                counterBadge.innerText = `📌 MOSTRANDO TOP ${count} ARCHIVOS MÁS RECIENTES`;
+            }
+        });
+
         function copyKey(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
                 const originalText = btn.innerText;
